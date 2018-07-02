@@ -15,7 +15,13 @@
         }
     ],
     "autoload": {
-        "psr-4": { "": "src/" }        
+        "files": [
+            "src/Games/EvenGame.php",
+            "src/Games/CalcGame.php",
+            "src/Logic/CommonLogic.php",
+            "src/Logic/EvenGameLogic.php",
+            "src/Logic/CalcGameLogic.php"
+        ]
     },
     "scripts": {
         "phpcs": "phpcs"
