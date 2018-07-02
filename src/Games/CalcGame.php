@@ -6,8 +6,7 @@ use function \cli\line;
 use function \cli\prompt;
 use function \Logic\CalcGameLogic\getTaskRightAnswer;
 use function \Logic\CalcGameLogic\isAnswerCorrect;
-use function \Logic\CommonLogic\userLoose;
-use function \Logic\CommonLogic\userWin;
+use function \Logic\CommonLogic\printGameResult;
     
 function run()
 {
@@ -43,10 +42,6 @@ function run()
             break;
         }
     }
-
-    if ($isGameOver) {
-        userLoose($userAnswer, $rightAnswer, $userName);
-    } else {
-        userWin($userName);
-    }
+    
+    printGameResult($isGameOver, $userAnswer, $rightAnswer, $userName);
 }
