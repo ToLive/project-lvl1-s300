@@ -9,5 +9,11 @@
             "name": "ToLive",
             "email": "seventyseventh@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "files": ["src/Cli.php"]
+    },
+    "require": {
+        "wp-cli/php-cli-tools": "*"
+    }
 }
