@@ -1,6 +1,9 @@
 {
     "name": "tolive/brain-games",
-    "bin": ["bin/brain-games"],
+    "bin": [
+        "bin/brain-games",
+        "bin/brain-even"
+    ],
     "description": "First project on Hexlet, Brain Games",
     "license": "MIT",
     "type": "project",
