@@ -16,7 +16,6 @@ function run()
     line();
     
     $isGameOver = false;
-    
     $answerCount = 0;
     
     while (!$isGameOver && $answerCount < 3) {
@@ -28,10 +27,13 @@ function run()
         
         if ((isEven($num) && $answer == "yes") || (!isEven($num) && $answer == "no")) {
             $answerCount += 1;
+            
             line("Correct!");
+            
             continue;
         } else {
             $isGameOver = true;
+            
             line("'" . $answer . "' is wrong answer ;(. Correct answer was '" . (isEven($num) ? "yes" : "no") . "'.");
             line("Let's try again, " . $userName . "!");
         }
