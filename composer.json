@@ -2,22 +2,12 @@
     "name": "tolive/brain-games",
     "bin": ["bin/brain-games"],
     "description": "First project on Hexlet, Brain Games",
+    "license": "MIT",
     "type": "project",
     "authors": [
         {
             "name": "ToLive",
             "email": "seventyseventh@gmail.com"
         }
-    ],
-    "require": {
-        "tightenco/collect": "^5.6",
-        "nesbot/carbon": "^1.26",
-        "danielstjules/stringy": "^3.1"
-    },
-    "require-dev": {
-        "symfony/var-dumper": "^4.0",
-        "phpunit/phpunit": "*",
-        "squizlabs/php_codesniffer": "*",
-        "codeclimate/php-test-reporter": "dev-master"
-}
+    ]
 }
