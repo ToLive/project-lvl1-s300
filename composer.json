@@ -2,7 +2,8 @@
     "name": "tolive/brain-games",
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ],
     "description": "First project on Hexlet, Brain Games",
     "license": "MIT",
@@ -14,10 +15,7 @@
         }
     ],
     "autoload": {
-        "files": [
-            "src/Cli.php",
-            "src/EvenGame.php"
-        ]        
+        "psr-4": { "": "src/" }        
     },
     "scripts": {
         "phpcs": "phpcs"

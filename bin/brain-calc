@@ -10,5 +10,5 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-$evenGame = new \games\EvenGame();
+$evenGame = new \games\CalcGame();
 $evenGame->run();
