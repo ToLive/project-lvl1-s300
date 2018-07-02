@@ -24,12 +24,12 @@ function run()
         
         line("Question: " . $num);
         
-        $answer = prompt('Your answer: ');                
+        $answer = prompt('Your answer: ');
         
         if ((isEven($num) && $answer == "yes") || (!isEven($num) && $answer == "no")) {
             $answerCount += 1;
             line("Correct!");
-            continue;            
+            continue;
         } else {
             $isGameOver = true;
             line("'" . $answer . "' is wrong answer ;(. Correct answer was '" . (isEven($num) ? "yes" : "no") . "'.");
