@@ -29,17 +29,15 @@ function run()
         $userAnswer = prompt('Your answer: ');
         $rightAnswer = getTaskRightAnswer($task);
     
-        if (isAnswerCorrect($userAnswer, $task)) {
-            $answerCount += 1;
-        
-            line("Correct!");
-            line();
-        
-            continue;
-        } else {
+        if (!isAnswerCorrect($userAnswer, $task)) {           
             $isGameOver = true;
             break;
         }
+        
+        $answerCount += 1;
+        
+        line("Correct!");
+        line();
     }
     
     printGameResult($isGameOver, $userAnswer, $rightAnswer, $userName);
