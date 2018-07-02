@@ -30,7 +30,7 @@ function run()
         $userAnswer = prompt('Your answer: ');
         $rightAnswer = getTaskRightAnswer($task);
                
-        if (!isAnswerCorrect($userAnswer, $task)) {           
+        if (!isAnswerCorrect($userAnswer, $task)) {
             $isGameOver = true;
             break;
         }
