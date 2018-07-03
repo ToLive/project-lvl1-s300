@@ -18,9 +18,7 @@
         "files": [
             "src/Games/EvenGame.php",
             "src/Games/CalcGame.php",
-            "src/Logic/CommonLogic.php",
-            "src/Logic/EvenGameLogic.php",
-            "src/Logic/CalcGameLogic.php"
+            "src/Logic/GameEngine.php"            
         ]
     },
     "scripts": {

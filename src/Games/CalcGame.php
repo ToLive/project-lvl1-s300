@@ -4,42 +4,43 @@ namespace Games\CalcGame;
 
 use function \cli\line;
 use function \cli\prompt;
-use function \Logic\CalcGameLogic\getTaskRightAnswer;
-use function \Logic\CalcGameLogic\isAnswerCorrect;
-use function \Logic\CommonLogic\printGameResult;
+use function \Logic\GameEngine\startGame;
     
 function run()
 {
-    line('Welcome to the Brain Game!');
-    line('What is the result of the expression?');
-
-    $userName = prompt('May I have your name?');
-
-    line("Hello, %s!", $userName);
-    line();
+    $rulesStr = 'What is the result of the expression?';
     
-    $answerCount = 0;
-    $isGameOver = false;
+    $taskGenFunc = function () {
+        $operArray = array('+', '-', '*');
+        
+        return implode(' ', array(rand(0, 100), $operArray[rand(0, 2)], rand(0, 100)));
+    };
     
-    while (!$isGameOver && $answerCount < 3) {
-        $operArray = array("+", "-", "*");
-        $task = array(rand(0, 100), $operArray[rand(0, 2)], rand(0, 100));
-    
-        line("Question: " . implode(" ", $task));
-    
-        $userAnswer = prompt('Your answer: ');
-        $rightAnswer = getTaskRightAnswer($task);
-               
-        if (!isAnswerCorrect($userAnswer, $task)) {
-            $isGameOver = true;
-            break;
+    $answerCheckFunc = function ($taskStr) {
+        $task = explode(' ', $taskStr);
+        
+        $left = $task[0];
+        $right = $task[2];
+        $operator = $task[1];
+        
+        $result = null;
+        
+        switch ($operator) {
+            case "+":
+                $result = $left + $right;
+                break;
+            case "-":
+                $result = $left - $right;
+                break;
+            case "*":
+                $result = $left * $right;
+                break;
+            default:
+                break;
         }
         
-        $answerCount += 1;
-        
-        line("Correct!");
-        line();
-    }
+        return $result;
+    };
     
-    printGameResult($isGameOver, $userAnswer, $rightAnswer, $userName);
+    startGame($rulesStr, $taskGenFunc, $answerCheckFunc);
 }
