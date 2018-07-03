@@ -5,42 +5,47 @@ namespace Games\CalcGame;
 use function \cli\line;
 use function \cli\prompt;
 use function \Logic\GameEngine\startGame;
-    
+
+const GAME_DESCRIPTION = 'What is the result of the expression?';
+
 function run()
 {
-    $rulesStr = 'What is the result of the expression?';
-    
-    $taskGenFunc = function () {
+    $getQuestionData = function () {
         $operArray = array('+', '-', '*');
         
-        return implode(' ', array(rand(0, 100), $operArray[rand(0, 2)], rand(0, 100)));
+        $question = implode(' ', array(rand(0, 100), $operArray[rand(0, 2)], rand(0, 100)));
+        
+        $questionArray = explode(' ', $question);
+        
+        $leftOperand = $questionArray[0];
+        $operator = $questionArray[1];
+        $rightOperand = $questionArray[2];
+        
+        return array(
+            "QUESTION" => $question,
+            "RIGHT_ANSWER" => getExpressionResult($leftOperand, $operator, $rightOperand)
+        );
     };
     
-    $answerCheckFunc = function ($taskStr) {
-        $task = explode(' ', $taskStr);
-        
-        $left = $task[0];
-        $right = $task[2];
-        $operator = $task[1];
-        
-        $result = null;
-        
-        switch ($operator) {
-            case "+":
-                $result = $left + $right;
-                break;
-            case "-":
-                $result = $left - $right;
-                break;
-            case "*":
-                $result = $left * $right;
-                break;
-            default:
-                break;
-        }
-        
-        return $result;
-    };
+    startGame(GAME_DESCRIPTION, $getQuestionData);
+}
+
+function getExpressionResult($leftOperand, $operator, $rightOperand)
+{
+    switch ($operator) {
+        case "+":
+            $result = $leftOperand + $rightOperand;
+            break;
+        case "-":
+            $result = $leftOperand - $rightOperand;
+            break;
+        case "*":
+            $result = $leftOperand * $rightOperand;
+            break;
+        default:
+            $result = null;
+            break;
+    }
     
-    startGame($rulesStr, $taskGenFunc, $answerCheckFunc);
+    return $result;
 }

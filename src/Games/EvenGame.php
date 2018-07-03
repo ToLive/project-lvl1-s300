@@ -6,17 +6,24 @@ use function \cli\line;
 use function \cli\prompt;
 use function \Logic\GameEngine\startGame;
 
+const GAME_DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
+
 function run()
 {
-    $rulesStr = 'Answer "yes" if number even otherwise answer "no".';
-    
-    $taskGenFunc = function () {
-        return rand(0, 100);
+    $getQuestionData = function () {
+        $question = rand(0, 100);
+        $answer = isEven($question) ? "yes" : "no";
+        
+        return array(
+            "QUESTION" => $question,
+            "RIGHT_ANSWER" => $answer
+        );
     };
     
-    $answerCheckFunc = function ($task) {
-        return $task % 2 == 0 ? "yes" : "no";
-    };
-    
-    startGame($rulesStr, $taskGenFunc, $answerCheckFunc);
+    startGame(GAME_DESCRIPTION, $getQuestionData);
+}
+
+function isEven($num)
+{
+    return $num % 2 == 0;
 }
