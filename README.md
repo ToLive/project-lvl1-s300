@@ -30,7 +30,7 @@ bin/brain-prime
 
 ## Gameplay
 
-[](https://github.com/ToLive/project-lvl1-s300/blob/master/gameplay.gif)
+![](https://raw.githubusercontent.com/ToLive/project-lvl1-s300/master/gameplay.gif)
 
 ## Requirements
 - PHP 7.2
