@@ -10,7 +10,7 @@ const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function run()
 {
-    $getQuestionData = function () {
+    $getGameData = function () {
         $question = implode(' ', array(rand(0, 100), rand(0, 100)));
         
         $questionArray = explode(' ', $taskStr);
@@ -19,12 +19,12 @@ function run()
         $secondNum = $task[1];
         
         return array(
-            "QUESTION" => $question,
-            "RIGHT_ANSWER" => getMaxDivisorOfTwo($firstNum, $secondNum)
+            "question" => $question,
+            "right_answer" => getMaxDivisorOfTwo($firstNum, $secondNum)
         );
     };
     
-    startGame(GAME_DESCRIPTION, $getQuestionData);
+    startGame(GAME_DESCRIPTION, $getGameData);
 }
 
 function getMaxDivisorOfTwo($firstNum, $secondNum)

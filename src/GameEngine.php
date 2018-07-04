@@ -7,7 +7,7 @@ use function \cli\prompt;
 
 const ANSWERS_TO_WIN = 3;
    
-function startGame($gameDescription, $getQuestionData)
+function startGame($gameDescription, $getGameData)
 {
     line('Welcome to the Brain Game!');
     line($gameDescription);
@@ -17,16 +17,11 @@ function startGame($gameDescription, $getQuestionData)
     line("Hello, %s!", $userName);
     line();
     
-    for ($i = 0; $i <= ANSWERS_TO_WIN; $i += 1) {
-        if ($i == ANSWERS_TO_WIN) {
-            line("Congratulations, " . $userName . "!");
-            break;
-        }
+    for ($i = 0; $i < ANSWERS_TO_WIN; $i += 1) {
+        $gameData = $getGameData();
         
-        $questionData = $getQuestionData();
-        
-        $question = $questionData["QUESTION"];
-        $rightAnswer = $questionData["RIGHT_ANSWER"];
+        $question = $gameData["question"];
+        $rightAnswer = $gameData["right_answer"];
     
         line("Question: " . $question);
     
@@ -36,10 +31,12 @@ function startGame($gameDescription, $getQuestionData)
             line("'" . $userAnswer . "' is wrong answer ;(. Correct answer was '" . $rightAnswer . "'.");
             line();
             line("Let's try again, " . $userName . "!");
-            break;
+            return;
         }
         
         line("Correct!");
         line();
     }
+    
+    line("Congratulations, " . $userName . "!");
 }

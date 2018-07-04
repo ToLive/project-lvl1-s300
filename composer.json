@@ -22,7 +22,7 @@
             "src/Games/CalcGame.php",
             "src/Games/GCDGame.php",
             "src/Games/BalanceGame.php",
-            "src/Logic/GameEngine.php"            
+            "src/GameEngine.php"            
         ]
     },
     "scripts": {

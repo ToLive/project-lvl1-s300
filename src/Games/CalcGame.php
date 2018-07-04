@@ -7,27 +7,24 @@ use function \cli\prompt;
 use function \Logic\GameEngine\startGame;
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
+const AVAILABLE_OPERATORS = ['+', '-', '*'];
 
 function run()
 {
-    $getQuestionData = function () {
+    $getGameData = function () {
         $operArray = array('+', '-', '*');
-        
-        $question = implode(' ', array(rand(0, 100), $operArray[rand(0, 2)], rand(0, 100)));
-        
-        $questionArray = explode(' ', $question);
-        
-        $leftOperand = $questionArray[0];
-        $operator = $questionArray[1];
-        $rightOperand = $questionArray[2];
+      
+        $leftOperand = rand(0, 100);
+        $operator = AVAILABLE_OPERATORS[rand(0, 2)];
+        $rightOperand = rand(0, 100);
         
         return array(
-            "QUESTION" => $question,
-            "RIGHT_ANSWER" => getExpressionResult($leftOperand, $operator, $rightOperand)
+            "question" => $leftOperand . ' ' . $operator . ' ' . $rightOperand,
+            "right_answer" => getExpressionResult($leftOperand, $operator, $rightOperand)
         );
     };
     
-    startGame(GAME_DESCRIPTION, $getQuestionData);
+    startGame(GAME_DESCRIPTION, $getGameData);
 }
 
 function getExpressionResult($leftOperand, $operator, $rightOperand)

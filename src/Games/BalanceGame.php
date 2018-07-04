@@ -10,16 +10,16 @@ const GAME_DESCRIPTION = 'Balance the given number.';
 
 function run()
 {
-    $getQuestionData = function () {
+    $getGameData = function () {
         $question = rand(100, 9999);
         
         return array(
-            "QUESTION" => $question,
-            "RIGHT_ANSWER" => flattingNum($question)
+            "question" => $question,
+            "right_answer" => flattingNum($question)
         );
     };
     
-    startGame(GAME_DESCRIPTION, $getQuestionData);
+    startGame(GAME_DESCRIPTION, $getGameData);
 }
 
 function flattingNum($num)
