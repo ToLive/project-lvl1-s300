@@ -2,8 +2,6 @@
 
 namespace Games\PrimeGame;
 
-use function \cli\line;
-use function \cli\prompt;
 use function \GameEngine\startGame;
 
 const GAME_DESCRIPTION = 'Answer "yes" if number is prime otherwise answer "no".';
@@ -25,7 +23,7 @@ function run()
 
 function isPrime($num)
 {
-    if ($num == 1) {
+    if ($num <= 1) {
         return false;
     }
     

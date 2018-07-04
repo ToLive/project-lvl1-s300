@@ -2,8 +2,6 @@
 
 namespace Games\BalanceGame;
 
-use function \cli\line;
-use function \cli\prompt;
 use function \GameEngine\startGame;
 
 const GAME_DESCRIPTION = 'Balance the given number.';

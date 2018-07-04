@@ -2,8 +2,6 @@
 
 namespace Games\CalcGame;
 
-use function \cli\line;
-use function \cli\prompt;
 use function \GameEngine\startGame;
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
@@ -12,8 +10,6 @@ const AVAILABLE_OPERATORS = ['+', '-', '*'];
 function run()
 {
     $getGameData = function () {
-        $operArray = array('+', '-', '*');
-      
         $leftOperand = rand(0, 100);
         $operator = AVAILABLE_OPERATORS[rand(0, 2)];
         $rightOperand = rand(0, 100);
