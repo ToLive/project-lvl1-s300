@@ -1,6 +1,6 @@
 <?php
 
-namespace Logic\GameEngine;
+namespace GameEngine;
 
 use function \cli\line;
 use function \cli\prompt;

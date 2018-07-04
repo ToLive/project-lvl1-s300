@@ -4,7 +4,7 @@ namespace Games\EvenGame;
 
 use function \cli\line;
 use function \cli\prompt;
-use function \Logic\GameEngine\startGame;
+use function \GameEngine\startGame;
 
 const GAME_DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 

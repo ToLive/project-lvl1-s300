@@ -6,7 +6,8 @@
         "bin/brain-calc",
         "bin/brain-gcd",
         "bin/brain-balance",
-        "bin/brain-progression"
+        "bin/brain-progression",
+        "bin/brain-prime"
     ],
     "description": "First project on Hexlet, Brain Games",
     "license": "MIT",
@@ -24,6 +25,7 @@
             "src/Games/GCDGame.php",
             "src/Games/BalanceGame.php",
             "src/Games/ProgressionGame.php",
+            "src/Games/PrimeGame.php",
             "src/GameEngine.php"            
         ]
     },

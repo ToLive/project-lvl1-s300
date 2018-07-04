@@ -4,7 +4,7 @@ namespace Games\ProgressionGame;
 
 use function \cli\line;
 use function \cli\prompt;
-use function \Logic\GameEngine\startGame;
+use function \GameEngine\startGame;
 
 const GAME_DESCRIPTION = 'What number is missing in this progression?';
 const PROGRESSION_LENGHT = 10;

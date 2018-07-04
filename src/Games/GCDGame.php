@@ -4,7 +4,7 @@ namespace Games\GCDGame;
 
 use function \cli\line;
 use function \cli\prompt;
-use function \Logic\GameEngine\startGame;
+use function \GameEngine\startGame;
 
 const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
