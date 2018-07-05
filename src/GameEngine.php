@@ -11,9 +11,9 @@ const ANSWERS_TO_WIN = 3;
  * Starts the game
  *
  * @param string $gameDescription Game description for user
- * @param int $getGameData Array of strings with game data. Required "question" and "right_answer" keys
+ * @param object $getGameData Array of strings with game data. Required "question" and "right_answer" keys
  */
-function startGame($gameDescription, array $getGameData)
+function startGame($gameDescription, object $getGameData)
 {
     line('Welcome to the Brain Game!');
     line($gameDescription);
