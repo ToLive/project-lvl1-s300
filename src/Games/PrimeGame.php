@@ -13,8 +13,8 @@ function run()
         $answer = isPrime($question) ? "yes" : "no";
         
         return array(
-            "question" => $question,
-            "right_answer" => $answer
+            "question" => (string) $question,
+            "right_answer" => (string) $answer
         );
     };
     

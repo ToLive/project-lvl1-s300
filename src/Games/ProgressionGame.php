@@ -23,7 +23,7 @@ function run()
         
         return array(
             "question" => implode(' ', $progressionArray),
-            "right_answer" => $maskedElement
+            "right_answer" => (string) $maskedElement
         );
     };
     

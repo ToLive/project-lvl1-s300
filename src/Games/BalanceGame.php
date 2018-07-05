@@ -12,8 +12,8 @@ function run()
         $question = rand(100, 9999);
         
         return array(
-            "question" => $question,
-            "right_answer" => flattingNum($question)
+            "question" => (string) $question,
+            "right_answer" => (string) flattingNum($question)
         );
     };
     

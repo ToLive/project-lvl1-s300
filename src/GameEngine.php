@@ -6,8 +6,14 @@ use function \cli\line;
 use function \cli\prompt;
 
 const ANSWERS_TO_WIN = 3;
-   
-function startGame($gameDescription, $getGameData)
+
+/**
+ * Starts the game
+ *
+ * @param string $gameDescription Game description for user
+ * @param int $getGameData Array of strings with game data. Required "question" and "right_answer" keys
+ */
+function startGame($gameDescription, array $getGameData)
 {
     line('Welcome to the Brain Game!');
     line($gameDescription);
@@ -21,7 +27,7 @@ function startGame($gameDescription, $getGameData)
         $gameData = $getGameData();
         
         $question = $gameData["question"];
-        $rightAnswer = (string) $gameData["right_answer"];
+        $rightAnswer = $gameData["right_answer"];
     
         line("Question: {$question}");
     

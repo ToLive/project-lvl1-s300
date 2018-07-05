@@ -13,8 +13,8 @@ function run()
         $secondNum = rand(0, 100);
         
         return array(
-            "question" => "{$firstNum} {$secondNum}",
-            "right_answer" => getMaxDivisorOfTwo($firstNum, $secondNum)
+            "question" => (string) "{$firstNum} {$secondNum}",
+            "right_answer" => (string) getMaxDivisorOfTwo($firstNum, $secondNum)
         );
     };
     
