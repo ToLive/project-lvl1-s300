@@ -21,16 +21,16 @@ function startGame($gameDescription, $getGameData)
         $gameData = $getGameData();
         
         $question = $gameData["question"];
-        $rightAnswer = $gameData["right_answer"];
+        $rightAnswer = (string) $gameData["right_answer"];
     
-        line("Question: " . $question);
+        line("Question: {$question}");
     
         $userAnswer = prompt('Your answer: ');
     
-        if ($rightAnswer != $userAnswer) {
-            line("'" . $userAnswer . "' is wrong answer ;(. Correct answer was '" . $rightAnswer . "'.");
+        if ($rightAnswer !== $userAnswer) {
+            line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'");
             line();
-            line("Let's try again, " . $userName . "!");
+            line("Let's try again, {$userName}!");
             return;
         }
         
@@ -38,5 +38,5 @@ function startGame($gameDescription, $getGameData)
         line();
     }
     
-    line("Congratulations, " . $userName . "!");
+    line("Congratulations, {$userName}!");
 }

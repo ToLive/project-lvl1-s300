@@ -15,7 +15,7 @@ function run()
         $rightOperand = rand(0, 100);
         
         return array(
-            "question" => $leftOperand . ' ' . $operator . ' ' . $rightOperand,
+            "question" => "{$leftOperand} {$operator} {$rightOperand}",
             "right_answer" => getExpressionResult($leftOperand, $operator, $rightOperand)
         );
     };
